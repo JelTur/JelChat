@@ -8,7 +8,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import service.ChatService;
 
-public class ChatController {
+
+public class ChatController extends ViewController {
+
     @FXML
     private ListView<String> chatView;
 
@@ -35,6 +37,15 @@ public class ChatController {
             chatView.getItems().add(messageField.getText());
             chatService.sendMessage(messageField.getText());
 
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
+    }
+
+    public void backToUsers(ActionEvent actionEvent) {
+        try {
+            changeScene(actionEvent, "userlist");
         } catch (Exception exception) {
             exception.printStackTrace();
         }

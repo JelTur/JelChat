@@ -18,5 +18,8 @@
             <TextField fx:id="messageField"/>
             <Button text="send" onAction="#sendMessage"/>
         </HBox>
+        <HBox spacing="10.0">
+            <Button text="back" onAction="#backToUsers"/>
+        </HBox>
     </VBox>
 </GridPane>
